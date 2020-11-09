@@ -1,11 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
+import Inventory from './components/Inventory'
 import './App.css';
 
 function App() {
   return (
     <div>
-      Test Page
+      Top Level
+      <Inventory />
     </div>
   );
 }
