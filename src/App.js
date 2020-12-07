@@ -7,10 +7,10 @@ import './App.css';
 function App() {
   return (
     <div>
-      <h1>MTG Collection App</h1>
-      {/* <Search /><br></br> */}
+      <h1>Collection App</h1>
+      <Search /><br></br>
       {/* <Results /><br></br> */}
-      <Inventory /><br></br>
+      {/* <Inventory /> */}
     </div>
   );
 }
