@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Results from './Results'
 
 function Search() {
 
@@ -7,11 +8,12 @@ function Search() {
     const [cardName, setCardName] = useState("")
     const [cardSet, setCardSet] = useState("")
     const [searchUrl, setSearchUrl] = useState(baseUrl)
+    const [searchResults, setSearchResults] = useState([])
 
     function fetchSearch() {
         fetch(searchUrl)
         .then(resp => resp.json())
-        .then(results => console.log(results))
+        .then(results => setSearchResults(results))
     }
 
     function handleCardName(e) {
@@ -48,6 +50,7 @@ function Search() {
                 <input onChange={handleCardSet} type='text' name='set' placeholder='Card Set' /><br></br>
                 <button onClick={searchCards} type='submit'>Search</button>
             </form>
+            <Results searchResults={searchResults} />
         </div>
     )
 }
