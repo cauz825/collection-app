@@ -2,28 +2,44 @@ import React, { useState } from 'react'
 
 function Search() {
 
+    let baseUrl = 'https://api.magicthegathering.io/v1/cards?'
+
     const [cardName, setCardName] = useState("")
     const [cardSet, setCardSet] = useState("")
-    // const [searchParams, setSearchParams] = useState("")
+    const [searchUrl, setSearchUrl] = useState(baseUrl)
 
-    function fetchSearch(searchTerm) {
-        fetch(`https://api.magicthegathering.io/v1/cards?${cardName}`)
+    function fetchSearch() {
+        fetch(searchUrl)
         .then(resp => resp.json())
         .then(results => console.log(results))
     }
 
     function handleCardName(e) {
         setCardName(e.target.value)
+        handleSearchUrl()
     }
     
     function handleCardSet(e) {
-        setCardSet(e.target.value)
+        setCardSet(e.target.value);
+        handleSearchUrl()
     }
     
     function searchCards(e) {
         e.preventDefault();
+        fetchSearch()
     }
-    
+
+    function handleSearchUrl() {
+        let searchTerms = ""
+        if(cardName && cardName.length > 0){
+            searchTerms = `${searchTerms}&name=${cardName}`
+        }
+        if(cardSet && cardSet.length > 0){
+            searchTerms = `${searchTerms}&setName=${cardSet}`
+        }
+        setSearchUrl(`${baseUrl}${searchTerms}`)
+    }
+
     return(
         <div>
             Search Component
