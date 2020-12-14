@@ -46,7 +46,7 @@ function Search() {
             searchTerms = `${searchTerms}&setName=${cardSet}`
         }
         if(cardColor && cardColor.length > 0){
-            searchTerms = `${searchTerms}`
+            searchTerms = `${searchTerms}&colors=${cardColor}`
         }
         setSearchUrl(`${baseUrl}${searchTerms}`)
     }
