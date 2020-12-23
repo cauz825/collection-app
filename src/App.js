@@ -1,5 +1,4 @@
 import React from 'react';
-import Inventory from './components/Inventory'
 import Search from './components/Search'
 import Navbar from './components/Navbar';
 import './App.css';
@@ -10,7 +9,6 @@ function App() {
       <Navbar />
       <h1>Collection App</h1>
       <Search /><br></br>
-      {/* <Inventory /> */}
     </div>
   );
 }
