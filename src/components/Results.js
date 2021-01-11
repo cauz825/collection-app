@@ -12,6 +12,7 @@ function Results(props) {
                         <h5>{card.name}</h5>
                         <p>Card Type: {card.type}</p>
                         <p>Rarity: {card.rarity}</p>
+                        <p>Set: {card.setName}</p>
                         <br></br>
                     </div>
                 )
