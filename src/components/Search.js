@@ -8,7 +8,6 @@ function Search() {
     const [cardName, setCardName] = useState("")
     const [cardSet, setCardSet] = useState("")
     const [cardColor, setCardColor] = useState("")
-    const [cardType, setCardType] = useState("")
     const [searchUrl, setSearchUrl] = useState(baseUrl)
     const [searchResults, setSearchResults] = useState([])
 
@@ -64,7 +63,6 @@ function Search() {
                 <input onChange={handleCardName} type='text' name='card name' placeholder='Card Name' /><br></br>
                 <input onChange={handleCardSet} type='text' name='set' placeholder='Card Set' /><br></br>
                 <input onChange={handleCardColor} type='text' name='color' placeholder='Card Color' /><br></br>
-                <input onChange={handleCardType} type='text' name='type' placeholder='Card Type' /><br></br>
                 <input type='text' name='cmc' placeholder='Coverted Mana Cost' /><br></br>
                 <button onClick={searchCards} type='submit'>Search</button>
             </form>
