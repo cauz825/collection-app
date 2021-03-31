@@ -31,11 +31,6 @@ function Search() {
         setCardColor(e.target.value);
         handleSearchUrl()
     }
-
-    function handleCardType(e) {
-        setCardType(e.target.value);
-        handleSearchUrl()
-    }
     
     function searchCards(e) {
         e.preventDefault();
@@ -63,7 +58,6 @@ function Search() {
                 <input onChange={handleCardName} type='text' name='card name' placeholder='Card Name' /><br></br>
                 <input onChange={handleCardSet} type='text' name='set' placeholder='Card Set' /><br></br>
                 <input onChange={handleCardColor} type='text' name='color' placeholder='Card Color' /><br></br>
-                <input type='text' name='cmc' placeholder='Coverted Mana Cost' /><br></br>
                 <button onClick={searchCards} type='submit'>Search</button>
             </form>
             <Results searchResults={searchResults} />
